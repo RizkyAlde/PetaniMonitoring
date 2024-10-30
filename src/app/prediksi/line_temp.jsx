@@ -58,8 +58,8 @@ const LineTemp = () => {
         console.log(data);
 
         // Process the data here and set it to chartData state
-        let labels = data.data_sensor.map(item => item.time);
-        let temperatures = data.data_sensor.map(item => item.temp);
+        let labels = data.hour_predicted.map(item => item.time);
+        let temperatures = data.hour_predicted.map(item => item.temp);
  
         // labels = labels.reverse()
         // temperatures = temperatures.reverse()
