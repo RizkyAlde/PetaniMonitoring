@@ -48,7 +48,7 @@ const LineTemp = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response = await fetch(`${apiUrl}/line/node${id_gh}`, {
+        const response = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -61,8 +61,8 @@ const LineTemp = () => {
         let labels = data.data_sensor.map(item => item.time);
         let temperatures = data.data_sensor.map(item => item.temp);
  
-        labels = labels.reverse()
-        temperatures = temperatures.reverse()
+        // labels = labels.reverse()
+        // temperatures = temperatures.reverse()
 
         const chartData = {
           labels,
