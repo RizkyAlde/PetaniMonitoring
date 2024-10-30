@@ -25,7 +25,7 @@ const options = {
         y: {
             beginAtZero: true,
             min:20,
-            max: 85,
+            max: 100,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
@@ -48,7 +48,7 @@ const LineHumid = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response = await fetch(`${apiUrl}/line/node${id_gh}`, {
+        const response = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -58,11 +58,12 @@ const LineHumid = () => {
         console.log(data);
 
         // Process the data here and set it to chartData state
-        let labels = data.data_sensor.map(item => item.time);
-        let moist = data.data_sensor.map(item => item.humid);
+        let labels = data.hour_predicted.map(item => item.time);
+        let moist = data.hour_predicted.map(item => item.humid);
  
-        labels = labels.reverse()
-        moist = moist.reverse()
+        // labels = labels.reverse()
+        // moist = moist.reverse()\
+        
         const chartData = {
           labels,
           datasets: [

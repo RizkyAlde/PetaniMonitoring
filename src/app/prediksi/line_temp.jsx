@@ -25,7 +25,7 @@ const options = {
         y: {
             beginAtZero: true,
             min:20,
-            max: 38,
+            max: 45,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'

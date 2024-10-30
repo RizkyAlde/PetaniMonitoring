@@ -25,7 +25,7 @@ const options = {
         y: {
             beginAtZero: true,
             min:1,
-            max:50000,
+            max:60000,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
@@ -48,7 +48,7 @@ const LineLumen = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response = await fetch(`${apiUrl}/line/node${id_gh}`, {
+        const response = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -58,11 +58,11 @@ const LineLumen = () => {
         console.log(data);
 
         // Process the data here and set it to chartData state
-        let labels = data.data_sensor.map(item => item.time);
-        let lumen = data.data_sensor.map(item => item.lumen);
+        let labels = data.hour_predicted.map(item => item.time);
+        let lumen = data.hour_predicted.map(item => item.lumen);
  
-        labels = labels.reverse()
-        lumen = lumen.reverse()
+        // labels = labels.reverse()
+        // lumen = lumen.reverse()
 
         const chartData = {
           labels,
