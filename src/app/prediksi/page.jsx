@@ -22,11 +22,11 @@ export default function Home() {
             Prediksi Kondisi
           </p>
           <p className={`text-[25px] text-center ${poppins.className}`}>
-            1 Hari Kedepan
+            Saat Ini
           </p>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#336600' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   SUHU
                 </p>
@@ -41,12 +41,12 @@ export default function Home() {
           </div>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#336600' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   KELEMBAPAN TANAH
                 </p>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
-                  Kelambapan Relative (RH)
+                  Kelambapan (RH)
                 </p>
               </CardHeader>
             </Card>
@@ -56,12 +56,12 @@ export default function Home() {
           </div>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#336600' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   KELEMBAPAN UDARA
                 </p>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
-                  Kelambapan Relative (RH)
+                  Kelambaban (RH)
                 </p>
               </CardHeader>
             </Card>
@@ -71,12 +71,12 @@ export default function Home() {
           </div>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#336600' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   INTENSITAS CAHAYA
                 </p>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
-                  Candela (Cd)
+                  Lux (lux)
                 </p>
               </CardHeader>
             </Card>
