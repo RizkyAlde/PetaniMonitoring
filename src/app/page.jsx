@@ -73,7 +73,7 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#336600" }}
+                style={{ backgroundColor: "#16a34a" }}
               >
                 <p
                   className={`text-white text-center text-[15px] ${poppins.className}`}
@@ -111,7 +111,7 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#336600" }}
+                style={{ backgroundColor: "#16a34a" }}
               >
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
@@ -149,7 +149,7 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#336600" }}
+                style={{ backgroundColor: "#16a34a" }}
               >
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
@@ -187,7 +187,7 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#336600" }}
+                style={{ backgroundColor: "#16a34a" }}
               >
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
