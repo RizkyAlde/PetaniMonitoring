@@ -25,7 +25,7 @@ const MyNavbarMenu = ({ activeIndex }) => {
 
   return (
     <NavbarMenu
-      className="text-[#D0D0D0] border-black border-t-1.5 px-0 w-[40%] gap-y-4 shadow-large navbar"
+      className="navbar-content-left text-[#D0D0D0] border-black border-t-1.5 px-0 w-[40%] gap-y-4 shadow-large navbar"
       motionProps={{ initial: false, exit: false }}
     >
       <div>

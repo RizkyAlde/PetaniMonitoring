@@ -73,7 +73,7 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#16a34a" }}
+                style={{ backgroundColor: "#FF4500" }}
               >
                 <p
                   className={`text-white text-center text-[15px] ${poppins.className}`}
@@ -95,7 +95,7 @@ export default function Home() {
                 </span>
                 <div className="flex-none flex">
                   <Image
-                    src="/assets/icons/home-celcius.png"
+                    src="/assets/icons/thermometer.png"
                     alt="Thermometer"
                     height={50}
                     width={50}
@@ -106,17 +106,17 @@ export default function Home() {
               </CardBody>
             </Card>
           </div>
-          {/* Kartu untuk menampilkan data kelembaban tanah */}
+          {/* Kartu untuk menampilkan data kelembapan tanah */}
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#16a34a" }}
+                style={{ backgroundColor: "#4B830D" }}
               >
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
                 >
-                  KELEMBABAN TANAH
+                  KELEMBAPAN TANAH
                 </p>
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
@@ -149,12 +149,12 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#16a34a" }}
+                style={{ backgroundColor: "#56A3A6" }}
               >
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
                 >
-                  KELEMBAPAN UDARA
+                  KELEMBABAN UDARA
                 </p>
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
@@ -171,7 +171,7 @@ export default function Home() {
                 </span>
                 <div className="flex-none flex">
                   <Image
-                    src="/assets/icons/icon-water.png"
+                    src="/assets/icons/wind.png"
                     alt="Thermometer"
                     height={50}
                     width={50}
@@ -187,7 +187,7 @@ export default function Home() {
             <Card className="mx-auto w-[78%]">
               <CardHeader
                 className="block"
-                style={{ backgroundColor: "#16a34a" }}
+                style={{ backgroundColor: "#FFD700" }}
               >
                 <p
                   className={`text-center text-white text-[15px] ${poppins.className}`}
@@ -209,7 +209,7 @@ export default function Home() {
                 </span>
                 <div className="flex-none flex">
                   <Image
-                    src="/assets/icons/menu-navigation.png"
+                    src="/assets/icons/sun.png"
                     alt="Thermometer"
                     height={50}
                     width={50}

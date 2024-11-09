@@ -35,7 +35,7 @@ const MyNavbar = ({ activeIndex }) => {
             }
           />
         </NavbarContent>
-        <MyNavbarMenu activeIndex={activeIndex} />
+          <MyNavbarMenu activeIndex={activeIndex} />
         <NavbarContent
           className="hidden lg:flex gap-4 text-[#D0D0D0]"
           justify="center"
@@ -47,11 +47,11 @@ const MyNavbar = ({ activeIndex }) => {
             <NavbarBrand
               className={`${inter.className} text-[12px] gap-2 text-white bg-black rounded-lg px-[36px] py-1`}
             >
-              <div className="w-[35px] h-[35px] relative">
+              <div className="w-[30px] h-[35px] relative">
                 <Image
                   src="/assets/icons/logo-replon.png"
                   fill
-                  sizes="35px"
+                  sizes="128px"
                   alt="EEPIS MOBILE REPLON"
                 />
               </div>

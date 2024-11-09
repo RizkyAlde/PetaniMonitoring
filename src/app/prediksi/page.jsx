@@ -26,7 +26,7 @@ export default function Home() {
           </p>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#FF4500"' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   SUHU
                 </p>
@@ -41,7 +41,7 @@ export default function Home() {
           </div>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#4B830D' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   KELEMBAPAN TANAH
                 </p>
@@ -56,9 +56,9 @@ export default function Home() {
           </div>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#56A3A6' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
-                  KELEMBAPAN UDARA
+                  KELEMBABAN UDARA
                 </p>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   Kelambaban (RH)
@@ -71,7 +71,7 @@ export default function Home() {
           </div>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#16a34a' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#FFD700' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   INTENSITAS CAHAYA
                 </p>
