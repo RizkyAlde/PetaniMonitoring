@@ -68,12 +68,12 @@ const LineTemp = () => {
           labels,
           datasets: [
             {
-              label: 'Temperature',
+              label: 'Suhu',
               data: temperatures,
-              borderColor: 'green',
+              borderColor: '#FF4500',
               borderWidth: 1,
               pointBackgroundColor: 'white',
-              pointBorderColor: 'green',
+              pointBorderColor: '#FF4500',
               pointBorderWidth: 2,
               pointRadius: 3,
               fill: false,
