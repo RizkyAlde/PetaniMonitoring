@@ -68,12 +68,12 @@ const LineLumen = () => {
           labels,
           datasets: [
             {
-              label: 'Lumen',
+              label: 'Intensitas Cahaya',
               data: lumen,
-              borderColor: 'green',
+              borderColor: '#FFD700',
               borderWidth: 1,
               pointBackgroundColor: 'white',
-              pointBorderColor: 'green',
+              pointBorderColor: '#FFD700',
               pointBorderWidth: 2,
               pointRadius: 3,
               fill: false,

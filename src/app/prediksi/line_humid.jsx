@@ -68,12 +68,12 @@ const LineHumid = () => {
           labels,
           datasets: [
             {
-              label: 'Humidity',
+              label: 'Kelembaban Udara',
               data: moist,
-              borderColor: 'green',
+              borderColor: '#56A3A6',
               borderWidth: 1,
               pointBackgroundColor: 'white',
-              pointBorderColor: 'green',
+              pointBorderColor: '#56A3A6',
               pointBorderWidth: 2,
               pointRadius: 3,
               fill: false,
