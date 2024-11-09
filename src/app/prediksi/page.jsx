@@ -26,7 +26,7 @@ export default function Home() {
           </p>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
-              <CardHeader className="block" style={{ backgroundColor: '#FF4500"' }}>
+              <CardHeader className="block" style={{ backgroundColor: '#FF4500' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
                   SUHU
                 </p>
