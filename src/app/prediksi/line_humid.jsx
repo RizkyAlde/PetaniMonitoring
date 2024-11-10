@@ -59,7 +59,7 @@ const LineHumid = () => {
 
         // Process the data here and set it to chartData state
         let labels = predicted_data.hour_predicted.map(item => item.Hour);
-        let humidity = predicted_data.hour_predicted.map(item => item.Predicted_Humid);
+        let humidity = predicted_data.hour_predicted.map(item => item.Predicted_Humidity);
  
         // labels = labels.reverse()
         // moist = moist.reverse()\
@@ -92,7 +92,7 @@ const LineHumid = () => {
             },
             {
               label: 'Kelembaban Udara Aktual',
-              data: Current_Humidity,
+              data: humidity_currently,
               borderColor: '#000000',
               borderWidth: 1,
               pointBackgroundColor: 'white',
