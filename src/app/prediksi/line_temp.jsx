@@ -58,8 +58,8 @@ const LineTemp = () => {
         console.log(predicted_data);
 
         // Process the data here and set it to chartData state
-        let labels = predicted_data.hour_predicted.map(item => item.time);
-        let temperatures_predicted = predicted_data.hour_predicted.map(item => item.temp);
+        let labels = predicted_data.hour_predicted.map(item => item.Hour);
+        let temperatures_predicted = predicted_data.hour_predicted.map(item => item.Predicted_Temperature);
  
         // labels = labels.reverse()
         // temperatures = temperatures.reverse()
@@ -79,7 +79,7 @@ const LineTemp = () => {
           labels,
           datasets: [
             {
-              label: 'Suhu',
+              label: 'Suhu prediksi',
               data: temperatures_predicted,
               borderColor: '#FF4500',
               borderWidth: 1,
@@ -93,7 +93,7 @@ const LineTemp = () => {
             {
               label: 'Suhu saat ini',
               data: temperatures_currently,
-              borderColor: '#00FF00',
+              borderColor: '#000000',
               borderWidth: 1,
               pointBackgroundColor: 'white',
               pointBorderWidth:2,
