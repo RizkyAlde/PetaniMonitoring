@@ -91,11 +91,12 @@ const LineTemp = () => {
               tension: 0.1
             },
             {
-              label: 'Suhu saat ini',
+              label: 'Suhu Aktual',
               data: temperatures_currently,
               borderColor: '#000000',
               borderWidth: 1,
-              pointBackgroundColor: 'white',
+              pointBackgroundColor: '#000000',
+              pointBorderColor: '#000000',
               pointBorderWidth:2,
               pointRadius: 3,
               fill: false,

@@ -48,19 +48,30 @@ const LineLumen = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
+        const response1 = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const data = await response.json();
-        console.log(data);
+        const predicted_data = await response1.json();
+        console.log(predicted_data);
 
         // Process the data here and set it to chartData state
-        let labels = data.hour_predicted.map(item => item.time);
-        let lumen = data.hour_predicted.map(item => item.lumen);
- 
+        let labels = predicted_data.hour_predicted.map(item => item.Hour);
+        let lumen = predicted_data.hour_predicted.map(item => item.Predicted_Lumen);
+        
+        const response2 = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const current_data = await response2.json();
+        console.log(current_data);
+
+        let lumen_currently = current_data.hour_currently.map(item => item.Current_Lumen);
+
         // labels = labels.reverse()
         // lumen = lumen.reverse()
 
@@ -68,12 +79,24 @@ const LineLumen = () => {
           labels,
           datasets: [
             {
-              label: 'Intensitas Cahaya',
+              label: 'Intensitas Cahaya Prediksi',
               data: lumen,
               borderColor: '#FFD700',
               borderWidth: 1,
               pointBackgroundColor: 'white',
               pointBorderColor: '#FFD700',
+              pointBorderWidth: 2,
+              pointRadius: 3,
+              fill: false,
+              tension: 0.1
+            },
+            {
+              label: 'Intensitas Cahaya Aktual',
+              data: lumen_currently,
+              borderColor: '#000000',
+              borderWidth: 1,
+              pointBackgroundColor: 'white',
+              pointBorderColor: '#000000',
               pointBorderWidth: 2,
               pointRadius: 3,
               fill: false,
