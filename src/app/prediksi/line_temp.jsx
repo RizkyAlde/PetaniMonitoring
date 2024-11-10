@@ -48,33 +48,55 @@ const LineTemp = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
+        const response1 = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const data = await response.json();
-        console.log(data);
+        const predicted_data = await response1.json();
+        console.log(predicted_data);
 
         // Process the data here and set it to chartData state
-        let labels = data.hour_predicted.map(item => item.time);
-        let temperatures = data.hour_predicted.map(item => item.temp);
+        let labels = predicted_data.hour_predicted.map(item => item.time);
+        let temperatures_predicted = predicted_data.hour_predicted.map(item => item.temp);
  
         // labels = labels.reverse()
         // temperatures = temperatures.reverse()
+
+        const response2 = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        const current_data = await response2.json();
+        console.log(current_data);
+
+        let temperatures_currently = current_data.hour_currently.map(item => item.Current_Temperature);
 
         const chartData = {
           labels,
           datasets: [
             {
               label: 'Suhu',
-              data: temperatures,
+              data: temperatures_predicted,
               borderColor: '#FF4500',
               borderWidth: 1,
               pointBackgroundColor: 'white',
               pointBorderColor: '#FF4500',
               pointBorderWidth: 2,
+              pointRadius: 3,
+              fill: false,
+              tension: 0.1
+            },
+            {
+              label: 'Suhu saat ini',
+              data: temperatures_currently,
+              borderColor: '#00FF00',
+              borderWidth: 1,
+              pointBackgroundColor: 'white',
+              pointBorderWidth:2,
               pointRadius: 3,
               fill: false,
               tension: 0.1
