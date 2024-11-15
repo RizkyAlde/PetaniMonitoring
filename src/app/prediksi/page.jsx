@@ -22,7 +22,7 @@ export default function Home() {
             Prediksi Kondisi
           </p>
           <p className={`text-[25px] text-center ${poppins.className}`}>
-            Saat Ini
+            Hari Ini
           </p>
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
