@@ -24,8 +24,8 @@ const options = {
         },
         y: {
             beginAtZero: true,
-            min:20,
-            max: 45,
+            min: min_value,
+            max: max_value,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
@@ -48,29 +48,32 @@ const LineTemp = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response1 = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
+        const predicted = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const predicted_data = await response1.json();
+        const predicted_data = await predicted.json();
         console.log(predicted_data);
 
         // Process the data here and set it to chartData state
         let labels = predicted_data.hour_predicted.map(item => item.Hour);
         let temperatures_predicted = predicted_data.hour_predicted.map(item => item.Predicted_Temperature);
  
+        let min_value = predicted_data.min_temp;
+        let max_value = predicted_data.max_temp;
+
         // labels = labels.reverse()
         // temperatures = temperatures.reverse()
 
-        const response2 = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
+        const current = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
         });
-        const current_data = await response2.json();
+        const current_data = await current.json();
         console.log(current_data);
 
         let temperatures_currently = current_data.hour_currently.map(item => item.Current_Temperature);
