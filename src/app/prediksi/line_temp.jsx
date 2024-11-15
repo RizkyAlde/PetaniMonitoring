@@ -4,7 +4,13 @@ import { Line } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
-const options = {
+const LineTemp = () => {
+  const [chartData, setChartData] = useState(null);
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(100);
+  const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+  const options = {
     responsive: true,
     plugins: {
         legend: {
@@ -36,11 +42,7 @@ const options = {
             }
         }
     }
-};
-
-const LineTemp = () => {
-  const [chartData, setChartData] = useState(null);
-  const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+  };
 
   useEffect(() => {
     const fetchTemp = async () => {
@@ -61,8 +63,8 @@ const LineTemp = () => {
         let labels = predicted_data.hour_predicted.map(item => item.Hour);
         let temperatures_predicted = predicted_data.hour_predicted.map(item => item.Predicted_Temperature);
  
-        let min_value = predicted_data.min_temp;
-        let max_value = predicted_data.max_temp;
+        setMinValue(predicted_data.min_temp);
+        setMaxValue(predicted_data.max_temp);
 
         // labels = labels.reverse()
         // temperatures = temperatures.reverse()
