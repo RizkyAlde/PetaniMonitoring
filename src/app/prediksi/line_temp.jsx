@@ -30,8 +30,8 @@ const LineTemp = () => {
         },
         y: {
             beginAtZero: true,
-            min: min_value,
-            max: max_value,
+            min: minValue,
+            max: maxValue,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
