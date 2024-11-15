@@ -7,5 +7,5 @@
 }
 .custom-navbar {
     --navbar-height: 4rem !important;
-    height: calc(100vh - var(--navbar-height) - 65vh) !important;
+    height: calc(100vh - var(--navbar-height) - 60vh) !important;
 }
