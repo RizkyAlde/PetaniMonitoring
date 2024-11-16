@@ -6,7 +6,7 @@ ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
 const LineTemp = () => {
   const [chartData, setChartData] = useState(null);
-  const [minValue, setMinValue] = useState(0);
+  const [minValue, setMinValue] = useState(20);
   const [maxValue, setMaxValue] = useState(100);
   const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
@@ -29,7 +29,7 @@ const LineTemp = () => {
         },
         y: {
             beginAtZero: true,
-            min: minValue,
+            min: 20,
             max: maxValue,
             grid: {
                 display: true,
