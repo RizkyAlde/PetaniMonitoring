@@ -62,7 +62,7 @@ const MyNavbar = ({ activeIndex }) => {
         <NavbarContent justify="end">
           <NavbarItem>
             <span className="rounded-lg">
-              <FontAwesomeIcon icon={faBell} color="#ffffff" size="xl" />
+              {/* <FontAwesomeIcon icon={faBell} color="#ffffff" size="xl" /> */}
             </span>
           </NavbarItem>
         </NavbarContent>
