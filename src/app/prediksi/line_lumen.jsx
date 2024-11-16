@@ -30,7 +30,7 @@ const LineLumen = () => {
         },
         y: {
             beginAtZero: true,
-            min:minValue,
+            min:0,
             max:maxValue,
             grid: {
                 display: true,
