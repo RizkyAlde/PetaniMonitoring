@@ -39,7 +39,7 @@ export default function Home() {
               <LineTemp />
             </div>
           </div>
-          <div className="container mx-auto justify-center mt-5">
+          {/* <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
               <CardHeader className="block" style={{ backgroundColor: '#4B830D' }}>
                 <p className={`text-white text-center text-[20px] ${poppins.className}`}>
@@ -53,7 +53,7 @@ export default function Home() {
             <div className="mt-3" style={{ backgroundColor: '#FFFFFF', padding: '20px', borderRadius: '10px' }}>
               <LineSoil />
             </div>
-          </div>
+          </div> */}
           <div className="container mx-auto justify-center mt-5">
             <Card className="mx-auto w-[78%]">
               <CardHeader className="block" style={{ backgroundColor: '#56A3A6' }}>

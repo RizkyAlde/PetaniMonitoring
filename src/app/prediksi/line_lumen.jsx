@@ -4,7 +4,13 @@ import { Line } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
-const options = {
+const LineLumen = () => {
+  const [chartData, setChartData] = useState(null);
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(100);
+  const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+  const options = {
     responsive: true,
     plugins: {
         legend: {
@@ -24,8 +30,8 @@ const options = {
         },
         y: {
             beginAtZero: true,
-            min:1,
-            max:60000,
+            min:minValue,
+            max:maxValue,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
@@ -36,11 +42,7 @@ const options = {
             }
         }
     }
-};
-
-const LineLumen = () => {
-  const [chartData, setChartData] = useState(null);
-  const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+  };
 
   useEffect(() => {
     const fetchLumen = async () => {
@@ -48,26 +50,29 @@ const LineLumen = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response1 = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
+        const predicted = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const predicted_data = await response1.json();
+        const predicted_data = await predicted.json();
         console.log(predicted_data);
 
         // Process the data here and set it to chartData state
         let labels = predicted_data.hour_predicted.map(item => item.Hour);
-        let lumen = predicted_data.hour_predicted.map(item => item.Predicted_Lumen);
+        let lumen_predicted = predicted_data.hour_predicted.map(item => item.Predicted_Lumen);
         
-        const response2 = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
+        setMinValue(predicted_data.min_lumen);
+        setMaxValue(predicted_data.max_lumen);
+
+        const current = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
         });
-        const current_data = await response2.json();
+        const current_data = await current.json();
         console.log(current_data);
 
         let lumen_currently = current_data.hour_currently.map(item => item.Current_Lumen);
@@ -80,7 +85,7 @@ const LineLumen = () => {
           datasets: [
             {
               label: 'Intensitas Cahaya Prediksi',
-              data: lumen,
+              data: lumen_predicted,
               borderColor: '#FFD700',
               borderWidth: 1,
               pointBackgroundColor: 'white',

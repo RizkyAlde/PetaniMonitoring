@@ -4,7 +4,13 @@ import { Line } from 'react-chartjs-2';
 
 ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
-const options = {
+const LineHumid = () => {
+  const [chartData, setChartData] = useState(null);
+  const [minValue, setMinValue] = useState(0);
+  const [maxValue, setMaxValue] = useState(100);
+  const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+
+  const options = {
     responsive: true,
     plugins: {
         legend: {
@@ -24,8 +30,8 @@ const options = {
         },
         y: {
             beginAtZero: true,
-            min:20,
-            max: 100,
+            min:minValue,
+            max:maxValue,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
@@ -36,11 +42,7 @@ const options = {
             }
         }
     }
-};
-
-const LineHumid = () => {
-  const [chartData, setChartData] = useState(null);
-  const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
+  };
 
   useEffect(() => {
     const fetchMoist = async () => {
@@ -48,29 +50,32 @@ const LineHumid = () => {
       const { id_gh } = farmer[0];
 
       try {
-        const response1 = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
+        const predicted = await fetch(`${apiUrl}/predictions_line/node${id_gh}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
           },
         });
-        const predicted_data = await response1.json();
+        const predicted_data = await predicted.json();
         console.log(predicted_data);
 
         // Process the data here and set it to chartData state
         let labels = predicted_data.hour_predicted.map(item => item.Hour);
-        let humidity = predicted_data.hour_predicted.map(item => item.Predicted_Humidity);
+        let humidity_predicted = predicted_data.hour_predicted.map(item => item.Predicted_Humidity);
  
+        setMinValue(predicted_data.min_humid);
+        setMaxValue(predicted_data.max_humid);
+
         // labels = labels.reverse()
         // moist = moist.reverse()\
         
-        const response2 = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
+        const current = await fetch(`${apiUrl}/current_line/node${id_gh}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
           },
         });
-        const current_data = await response2.json();
+        const current_data = await current.json();
         console.log(current_data);
 
         let humidity_currently = current_data.hour_currently.map(item => item.Current_Humidity);
@@ -80,7 +85,7 @@ const LineHumid = () => {
           datasets: [
             {
               label: 'Kelembaban Udara Prediksi',
-              data: humidity,
+              data: humidity_predicted,
               borderColor: '#56A3A6',
               borderWidth: 1,
               pointBackgroundColor: 'white',

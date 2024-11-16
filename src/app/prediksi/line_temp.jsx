@@ -15,7 +15,6 @@ const LineTemp = () => {
     plugins: {
         legend: {
             display: false
-
         }
     },
     scales: {
