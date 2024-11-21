@@ -100,7 +100,7 @@ const LineHumid = () => {
               data: humidity_currently,
               borderColor: '#000000',
               borderWidth: 1,
-              pointBackgroundColor: 'white',
+              pointBackgroundColor: '#000000',
               pointBorderColor: '#000000',
               pointBorderWidth: 2,
               pointRadius: 3,
