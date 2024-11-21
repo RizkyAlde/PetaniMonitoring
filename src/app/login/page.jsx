@@ -74,7 +74,7 @@ export default function Login() {
             Sign In
           </button>
         </form>
-        <p className="text-center mt-4">
+        {/* <p className="text-center mt-4">
           Not a member?{' '}
           <Link href="/login/register" className="text-teal-500 hover:underline">
             Create Account
@@ -84,7 +84,7 @@ export default function Login() {
           <Link href="/login/fix-password" className="text-teal-500 hover:underline">
             Forgot Password?
           </Link>
-        </p>
+        </p> */}
         {message != null ? (
           <div>
             <p className="text-red-500 text-center mt-2">{message}</p>
