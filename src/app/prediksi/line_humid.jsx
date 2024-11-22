@@ -6,7 +6,7 @@ ChartJS.register(CategoryScale, LinearScale, LineElement, PointElement);
 
 const LineHumid = () => {
   const [chartData, setChartData] = useState(null);
-  const [minValue, setMinValue] = useState(0);
+  const [minValue, setMinValue] = useState(30);
   const [maxValue, setMaxValue] = useState(100);
   const apiUrl = process.env.NEXT_PUBLIC_BACKEND_API_URL;
 
