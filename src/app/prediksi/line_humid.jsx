@@ -31,7 +31,7 @@ const LineHumid = () => {
         y: {
             beginAtZero: true,
             min:30,
-            max:maxValue,
+            max:100,
             grid: {
                 display: true,
                 color: 'rgba(0, 0, 0, 0.1)'
